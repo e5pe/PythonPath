@@ -129,7 +129,7 @@ Anything not empty or not none is True.
 - len nos devuelve la longitud de la cadena, la cual tiene que ser pasada como argumento a la función
 - replace: para reemplazar ciertos caracteres de una cadena por otros. Devuelve un string nuevo, no cambia la cadena sobre la que se realiza el replace
 
-##### Substrings (3_10) 
+##### Substrings (3_10)
 
 - el índice inicial es inclusivo
 - el índice final es exclusivo
@@ -292,3 +292,30 @@ for k in d:
 for k, v in d.items():
     print(k+" "+str(v))
 ```
+
+## Range
+
+```python
+"""
+6_6
+Built-in function
+Crea una secuencia de números pero no los guarda en memoria
+Muy útil para generar números 
+El párametro final no se incluye en la "lista" que genera
+"""
+
+print(list(range(1,30)))
+
+a = range(12,40,2)
+print(list(a))
+
+# lista = [1,2,3]
+# for num in lista:
+#     print(num)
+for num in range(1,4): # Sirve para iterar x veces, por ejemplo.
+    print(num)
+
+```
+
+## Funciones
+
