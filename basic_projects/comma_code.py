@@ -13,9 +13,9 @@ def separateList(lista):
     for index in range(len(lista)):
         if index == len(lista) - 1:
             # si es el último añadimos un and
-            dev = dev + 'and ' + lista[index]
+            dev += 'and ' + lista[index]
         else:
-            dev = dev + lista[index]+', '
+            dev += lista[index]+', '
     return dev
 
 
