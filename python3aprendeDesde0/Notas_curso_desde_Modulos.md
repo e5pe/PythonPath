@@ -44,3 +44,7 @@ Successfully built camelcase
 Installing collected packages: camelcase
 Successfully installed camelcase-0.2
 ```
+
+## Ficheros
+
+Un *fichero* es una secuencia de bits que se almacena con un nombre en algún dispositivo físico.
