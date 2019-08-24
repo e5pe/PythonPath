@@ -49,3 +49,49 @@ Successfully installed camelcase-0.2
 
 Un *fichero* es una secuencia de bits que se almacena con un nombre en algún dispositivo físico.
 
+## Expresiones regulares, JSON, fecha y hora
+
+### Expresiones regulares
+
+Hay que usar el módulo *re*.
+
+`^` y la palabra va a buscar si hay alguna línea dentro de la cadena que empiece por esa palabra.
+`.` para decir cualquier caracter y `*` para decir que puede aparecer 0 o más veces
+
+El *findall* permite buscar todas las ocurrencias de un patrón en una cadena.
+Ejemplo:
+
+```python
+texto = """
+El coche de Luis es gris,
+el coche de Antonio es rojo,
+y el coche de María es rojo
+"""
+
+encontrados = re.findall("coche.*rojo",texto)
+print(encontrados)
+```
+
+La salida:
+
+```bash
+['coche de Antonio es rojo', 'coche de María es rojo']
+```
+
+El *split* divide una cadena a partir de un patrón.
+El `\s` va a dividir el texto en las palabras que lo forman poniéndole como patrón el espacio en blanco.
+
+*sub* permite cambiar una palabra de una cadena por otra.
+Ejemplo:
+
+```python
+texto = "La silla es blanca y vale 80"
+resultado = re.sub("blanca","roja",texto)
+print(resultado)
+```
+
+parámetros del método *sub*:
+
+- el primero es la palabra que queremos cambiar
+- el segundo es la palabra por la que queremos cambiar la anterior
+- el último es el texto al que aplicar el método
