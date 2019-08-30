@@ -95,3 +95,8 @@ parámetros del método *sub*:
 - el primero es la palabra que queremos cambiar
 - el segundo es la palabra por la que queremos cambiar la anterior
 - el último es el texto al que aplicar el método
+
+### JSON
+
+Es una forma de almacenar e intercambiar datos que están en formato texto. Es muy utilizado por las empresas para intercambiar datos entre ellas.
+
