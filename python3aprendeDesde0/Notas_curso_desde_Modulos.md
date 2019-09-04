@@ -100,3 +100,29 @@ parámetros del método *sub*:
 
 Es una forma de almacenar e intercambiar datos que están en formato texto. Es muy utilizado por las empresas para intercambiar datos entre ellas.
 
+## Bases de datos
+
+SQLite es un sistema de gestión de bases de datos relacionales.
+
+### Tablas
+
+Crear una tabla. Con el cursor de la base de datos, mediante el comando execute ejecuta la sentencia SQL:
+
+```python
+# SQLite3 - Crear una tabla en nuestra base de datos
+
+import sqlite3
+
+connection = sqlite3.connect("basededatos1.db")
+
+cursor = connection.cursor()
+
+cursor.execute("CREATE TABLE PERSONAS (nombre TEXT, apellido1 TEXT, apellido2 TEXT, edad INTEGER)")
+
+# con el cursor de la base de datos, mediante el comando execute ejecuta la sentencia SQL
+
+connection.commit() # le dice a la base de datos que queremos mantener la sentencia para siempre
+
+connection.close() # por último cerramos la conexión a la base de datos
+
+```
