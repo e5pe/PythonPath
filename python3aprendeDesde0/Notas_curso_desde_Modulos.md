@@ -152,3 +152,11 @@ raiz.mainloop() # Para que esté todo el rato ejecutandose
 
 El componente frame nos permite crear otros componentes dentro de él.
 
+### Label
+
+Componente label o etiqueta, en español.
+Con el config le indicamos el color, el color de fondo y la fuente:
+
+```python
+etiqueta.config(fg="green", bg="lightgrey",font=("Cortana",30))
+```
