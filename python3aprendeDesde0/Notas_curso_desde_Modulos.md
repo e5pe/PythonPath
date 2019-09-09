@@ -126,3 +126,29 @@ connection.commit() # le dice a la base de datos que queremos mantener la senten
 connection.close() # por último cerramos la conexión a la base de datos
 
 ```
+
+## Módulo tkinter
+
+> Sección 15
+
+Sirve para crear interfaces gráficas, que son medios visuales que permiten a los usuarios interacturar con nuestro programa de forma gráfica.
+
+### Componente raíz tk
+
+Se crea de la siguiente forma:
+
+```python
+# tkinter - Componente raíz (tk)
+
+import tkinter
+
+raiz = tkinter.Tk() # devuelve el elemento raíz
+raiz.title("Mi programa")
+
+raiz.mainloop() # Para que esté todo el rato ejecutandose
+```
+
+### Frame
+
+El componente frame nos permite crear otros componentes dentro de él.
+
