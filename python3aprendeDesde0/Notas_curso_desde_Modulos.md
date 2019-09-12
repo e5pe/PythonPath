@@ -160,3 +160,26 @@ Con el config le indicamos el color, el color de fondo y la fuente:
 ```python
 etiqueta.config(fg="green", bg="lightgrey",font=("Cortana",30))
 ```
+
+### Entry
+
+Campo de texto corto para la entrada de datos por teclado
+
+### Text
+
+Campo de texto largo, de varias líneas, para introducir texto por teclado.
+
+### Button
+
+Un botón.
+Al crearlo lee pasamos la raiz, el texto que mostrará el botón y por último el comando que tiene que ejecutar, en nuestro caso será una función llamada accion.
+Como se puede ver a continuación:
+
+```python
+def accion():
+    print("Hola mundo")
+
+# Creamos nuestro componente Button
+
+boton = tkinter.Button(raiz, text="Ejecutar",command=accion) 
+```
