@@ -183,3 +183,148 @@ def accion():
 
 boton = tkinter.Button(raiz, text="Ejecutar",command=accion) 
 ```
+
+## Documentación automática
+
+### pydoc
+
+Sirve para generar documentación desde la terminal.
+Ponemos:
+
+```bash
+pydoc <ruta fichero/nombre del fichero>
+```
+
+Ejemplo:
+
+`pydoc len` nos devuelve lo siguiente:
+
+```python
+Help on built-in function len in module builtins:
+
+len(obj, /)
+    Return the number of items in a container.
+(END)
+```
+
+Ejemplo de una clase que hemos creado:
+
+`pydoc3.6 /home/espe/Proyectos/CursosPython/python3aprendeDesde0/16_Documentacion_auto/saludos.py` nos devuelve:
+
+```python
+Help on module saludos:
+
+NAME
+    saludos - # pydoc - Generar documentación automática desde la consola o Terminal de comandos
+
+CLASSES
+    builtins.object
+        Saludos
+    
+    class Saludos(builtins.object)
+     |  Esta clase tendrá dos funciones
+     |  Ambas funciones recibirán como parámetro un nombre
+     |  
+     |  Methods defined here:
+     |  
+     |  adios(self, nombre)
+     |      Esta función sirve para decir adiós
+     |  
+     |  buenosdias(self, nombre)
+     |      Esta función sirve para decir buenos días
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+DATA
+    saludo = <saludos.Saludos object>
+
+FILE
+    /home/espe/Proyectos/CursosPython/python3aprendeDesde0/16_Documentacion_auto/saludos.py
+```
+
+También podemos hacer que genere un fichero html con la documentación generada. Como a continuación:
+
+`pydoc3.6 -w /home/espe/Proyectos/CursosPython/python3aprendeDesde0/16_Documentacion_auto/saludos.py`. Simplemente tenemos que poner pydoc **-w**
+
+## Pruebas automáticas
+
+### Doctest
+
+Dentro de las comillas dobles ponemos nuestras pruebas.
+Por ejemplo:
+
+```python
+    """
+    >>> sumar(4,3)
+    7
+    """
+```
+
+Y al final del documento ponemos lo siguiente:
+
+```python
+import doctest
+doctest.testmod()
+```
+
+En el caso de nuestro documento para pasar los tests de doctest tenemos que poner **-v** al final:
+
+`python python3aprendeDesde0/17_Pruebas_automaticas/sumar.py -v`
+
+output:
+
+```bash
+6
+Trying:
+    sumar(4,3)
+Expecting:
+    7
+ok
+1 items had no tests:
+    __main__
+1 items passed all tests:
+   1 tests in __main__.sumar
+1 tests in 2 items.
+1 passed and 0 failed.
+Test passed.
+```
+
+### Unittest
+
+Sirve para crear pruebas dentrod el propio código.
+Se parece un poco a las clases de test de java con junit:
+
+```python
+# Unittest - Sirve para crear pruebas dentrod el propio código
+def multiplicar(numero1, numero2):
+    return numero1 * numero2
+
+resultado = multiplicar(2,4)
+print(resultado)
+
+import unittest
+class pruebas(unittest.TestCase):
+    def test(self):
+        self.assertEqual(multiplicar(4,2), 8)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+Resultado de la ejecución:
+
+```bash
+8
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+```
