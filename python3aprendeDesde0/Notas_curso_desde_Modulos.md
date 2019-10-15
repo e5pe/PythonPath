@@ -328,3 +328,41 @@ Ran 1 test in 0.000s
 
 OK
 ```
+
+## Funciones avanzadas
+
+### Funciones generadoras
+
+Un ejemplo sería **range**. Ejemplo:
+
+`range(0,11)`
+
+Genera números del 0 al 10, el último no está incluido.
+Un ejemplo de función generadora:
+
+```python
+def pares(maximo):
+    for numero in range(0,maximo)
+        if numero % 2 == 0:
+            yield numero
+```
+
+Como es una función generadora ponemos *yield* al final en vez de return.
+
+### Filter
+
+Filter = Función para filtrar resultados según la condición.
+
+```python
+def positivo(numero):
+    if numero > 0:
+        return True
+    else:
+        return False
+```
+
+Con una función condicional, por ejemplo *positivo* podemos usar filter.
+
+### Map
+
+Map sive para aplicar una función a cada uno de los elementos de una lista.
