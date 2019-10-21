@@ -390,3 +390,69 @@ print("\nCon función lambda:")
 lista_resultado = list(map(lambda numero: numero * 2, numeros))
 print(lista_resultado)
 ```
+
+## Módulo *numpy*
+Debemos importar el módulo para utilizarlo:
+
+`import numpy as np`
+
+El as sirve para crear un alias.
+
+### Creando arrays
+
+```python
+print(np.zeros(4))
+
+print(np.ones(5))
+print(np.arange(5)) # Tiene 5 elementos del 0 al 4
+
+print(np.arange(2,20,3)) # Inicio, fin y el step
+
+lista1 = [1,2,3,4]
+array1 = np.array(lista1) # Nos permite convertir una lista en un array
+```
+
+#### Operaciones
+
+**Podemos** realizar operaciones (aritméticas) con los items de un array
+
+```python
+array2 = array1 + 4
+print(array2)
+
+lista1 = [1,2,3,4]
+lista2 = [5,6,7,8]
+lista_doble = (lista1,lista2)
+array_doble = np.array(lista_doble)
+
+print(array_doble + 6)
+print(array_doble ** 2)
+```
+
+#### Indexación
+
+```python
+array = np.arange(0,11)
+print(array)
+print(array[0:3])
+print(array[2:5])
+
+array_copia = array.copy()
+print(array_copia)
+array_copia[0:3] = 20
+print(array_copia)
+print(array)
+
+array2 = np.array(([1,2,3],[4,5,6],[7,8,9]))
+print(array2[1])
+```
+
+## Matrices traspuestas
+
+Cambiar ordenadamente las filas por las columnas)
+
+`array = np.arange(0,15).reshape(3,5)`
+Con *reshape* indicamos la forma que le vamos a dar, que va a ser 3 filas y 5 columnas.
+
+`array_tras = array.T`
+Así conseguimos la matriz traspuesta a otra.
