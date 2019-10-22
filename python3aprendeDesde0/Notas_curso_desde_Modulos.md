@@ -447,7 +447,7 @@ array2 = np.array(([1,2,3],[4,5,6],[7,8,9]))
 print(array2[1])
 ```
 
-## Matrices traspuestas
+### Matrices traspuestas
 
 Cambiar ordenadamente las filas por las columnas)
 
@@ -456,3 +456,56 @@ Con *reshape* indicamos la forma que le vamos a dar, que va a ser 3 filas y 5 co
 
 `array_tras = array.T`
 Así conseguimos la matriz traspuesta a otra.
+
+### Entrada y salida con arrays
+
+Guardar un array:
+
+`np.save('array1s', array1)`
+
+Cargar un array:
+
+`array2 = np.load('array1s.npy')`
+
+Salvar dos arrays a la vez se hace de la siguiente forma:
+
+`np.savez('arrays',x=array1,y=array2)`
+
+Y para recuperarlo:
+
+`array_recuperado = np.load('arrays.npz')`
+
+```python
+array_recuperado = np.load('arrays.npz')
+array1_recuperado = array_recuperado['x']
+array2_recuperado = array_recuperado['y']
+print(array_recuperado)
+print(array1_recuperado)
+print(array2_recuperado)
+```
+
+También se pueden salvar en un fichero de texto con:
+
+`np.savetxt('mificheroarray.txt',array2,delimiter=',')`
+
+*delimiter* indicia por qué están separados los números.
+
+### Funciones con arrays
+
+**Raiz cuadrada**:
+
+`np.sqrt(array)`
+
+Para crear arrays de forma aleatoria:
+
+`array2 = np.random.rand(5)`
+
+Otros ejemplos:
+
+`suma = np.add(array, array3)`
+
+Máximo de los dos arrays:
+
+`maximo = np.maximum(array,array3)`
+
+## Módulo pandas
