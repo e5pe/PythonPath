@@ -509,3 +509,37 @@ Máximo de los dos arrays:
 `maximo = np.maximum(array,array3)`
 
 ## Módulo pandas
+
+### Series
+
+Una serie es parecido a un array de numpy pero es una lista de valores indexada.
+Ejemplo output:
+
+```bash
+Asignaturas de Daniel
+matematicas    8
+historia       6
+fisica         9
+literatura     7
+Name: Notas de Daniel, dtype: int64
+```
+
+Se les puede poner nombre y al index también:
+
+```python
+asignaturas = ['matematicas','historia','fisica','literatura']
+notas = [8,6,9,7]
+
+serie_notas_daniel = pd.Series(notas, index=asignaturas)
+print(serie_notas_daniel)
+
+print(serie_notas_daniel[serie_notas_daniel >= 8])
+
+serie_notas_daniel.name = "Notas de Daniel"
+serie_notas_daniel.index.name = "Asignaturas de Daniel"
+
+print(serie_notas_daniel)
+```
+
+Se pueden convertir a muchas cosas, como por ejemplo a un diccionario:
+`diccionario = serie_notas_daniel.to_dict()`
