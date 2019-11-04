@@ -1,7 +1,9 @@
 {
     /* "python.pythonPath": "/usr/bin/python3" */
-    "python.pythonPath": "../environments/test_env/bin/python3",
+    "python.pythonPath": "/home/espe/Proyectos/environments/test_env/bin/python3",
     "cSpell.ignoreWords": [
         "arange"
-    ]
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
 }
