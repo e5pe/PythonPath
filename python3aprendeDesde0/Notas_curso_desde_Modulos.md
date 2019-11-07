@@ -569,3 +569,34 @@ print(dataframe_nba.tail())
 # Con el número nos muestra el número de elementos que queramos
 print(dataframe_nba.head(2))
 ```
+
+### Índices
+
+Los nombres de los indices no se pueden cambiar.
+
+### Para borrar elementos
+
+Para borrar filas y columnas en un dataframe tenemos, en el caso de las columnas pasar el índice de la columna que queremos borrar y el axis, es decir, le tenemos que pasar el eje en el que considera que está las columnas.
+
+Ejemplo:
+
+```python
+lista_valores = np.arange(9).reshape(3,3)
+lista_indices = ['a','b','c']
+lista_columnas = ['columna1','columna2','columna3']
+dataframe = pd.DataFrame(lista_valores, index = lista_indices, columns=lista_columnas)
+print(dataframe)
+dataframe.drop('b')
+dataframe.drop('columna2',axis=1)
+# Le tenemos que pasar el eje en el que considera que está las columnas
+```
+
+Aunque así no se guardan los cambios en el dataframe, para guardar los datos tendríamos que hacerlo así:
+
+```python
+print(dataframe)
+dataframe = dataframe.drop('b')
+print(dataframe)
+dataframe = dataframe.drop('columna2')
+print(dataframe)
+```
