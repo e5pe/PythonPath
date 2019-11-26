@@ -181,7 +181,7 @@ def accion():
 
 # Creamos nuestro componente Button
 
-boton = tkinter.Button(raiz, text="Ejecutar",command=accion) 
+boton = tkinter.Button(raiz, text="Ejecutar",command=accion)
 ```
 
 ## Documentación automática
